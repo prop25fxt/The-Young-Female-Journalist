@@ -23,7 +23,13 @@ a:hover{text-decoration:underline}
 .header{position:sticky;top:0;z-index:50;background:rgba(251,251,253,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:18px}
 .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-.brand img{height:40px;width:auto}
+.brand img{
+  height:64px;        /* Bigger, clear logo */
+  width:auto;
+  max-width:260px;    /* Prevents overflow */
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));
+}
+
 .navlinks{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
 .navlinks a{font-weight:600;font-size:14px;color:rgba(15,23,42,.88);padding:8px 10px;border-radius:10px}
 .navlinks a.active{background:rgba(75,42,134,.08);color:var(--primary)}
@@ -83,6 +89,9 @@ textarea{min-height:120px;resize:vertical}
   .grid-3,.grid-2{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .brand{min-width:unset}
+  .brand img{
+    height:56px;   /* Still big on mobile, not cramped */
+  }
   .navlinks{display:none;width:100%;padding:10px 0}
   .navlinks.open{display:flex;flex-direction:column;align-items:flex-start}
   .actions{display:none}
